@@ -307,10 +307,10 @@
                 message = 'Pleack check Quatity'
             }
 
-            if(address === ""){
+            if(!coords && address === ""){
                 message = 'Please check address'
             }
-            if(address.length < 30){
+            if(!coords && address.length < 30){
                 message = 'Address requires minimum 30 Characters with Contact Person Name, Address, Pin Landmark'
             }
 
