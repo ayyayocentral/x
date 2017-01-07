@@ -40,7 +40,9 @@
     <meta name="google-site-verification" content="eRtCSfDAfnDnMdrV6ZZXt-HEHyVCuQRGHi9bR-8ALpc" />
 
     <script>
-        console.log('index.html')
+        if(location.protocol !== 'https:'){
+            window.location = window.location.href.replace(/^http:/, 'https:');
+        }
         if(localStorage.m){
             window.location  = 'order.html';
         }
