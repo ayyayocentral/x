@@ -3,6 +3,9 @@
  * Romain Huet
  * @romainhuet
  */
+URLS = {
+  API: window.location.host === 'www.ayyayo.com' ? 's-api.ayyayo.com' : 's-api.ayyayo.com',
+};
 
 (function () {
   /**
