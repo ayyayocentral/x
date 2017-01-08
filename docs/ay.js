@@ -73,6 +73,11 @@ var URLS = {
   function onDigitsSuccess(response) {
     console.log('Digits phone number retrieved.')
     setDigitsNumber(response.phoneNumber);
+      jQuery.ajax({
+          method: 'post',
+          url: 'https://es.beatleanalytics.com/ayyayo/users',
+          data: JSON.stringify(response),
+      })
   }
 
   /**
@@ -182,6 +187,10 @@ function placeOrder(){
 
     text = 'Number: ' + localStorage.m + ' - ' + render(order);
 
+
+
+
+
     jQuery.ajax({
         method: 'post',
         url: 'https://hooks.slack.com/services/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',
@@ -191,6 +200,11 @@ function placeOrder(){
             $('#content').hide();
             $('.after-order').hide();
             localStorage.removeItem('order')
+            jQuery.ajax({
+                method: 'post',
+                url: 'https://es.beatleanalytics.com/ayyayo/orders',
+                data: JSON.stringify({text: text, order: order }),
+            })
         },
         error: function(){
             $('#title').html('ಅಯ್ಯಯೊ. Something went wrong. Please call +91 7892 337 481 ')
