@@ -1,11 +1,11 @@
 <html lang="en"   class="version-d platform-desktop">
 <head>
     <meta charset="UTF-8">
-    <title>Ayyayo - Buy & Sell Water Online</title>
+    <title>Ayyayo</title>
     <meta name="description" content="Bringing Business Online all over the world.">
     <meta property="og:title" content="Ayyayo"/>
     <meta property="og:image" content="promo.png"/>
-    <meta property="og:site_name" content="Ayyayo.com - Buy & Sell Water Online"/>
+    <meta property="og:site_name" content="Ayyayo.com"/>
     <meta property="og:description" content="Bringing Business Online all over the world."/>
 
 
@@ -39,36 +39,19 @@
     <meta name="google-site-verification" content="3zd2nOZQunUigKT42ObC3BFdwfK9-HvgOlU452blK8g" />
     <meta name="google-site-verification" content="eRtCSfDAfnDnMdrV6ZZXt-HEHyVCuQRGHi9bR-8ALpc" />
 
-    <script>
-        if(location.protocol !== 'https:'){
-            window.location = window.location.href.replace(/^http:/, 'https:');
-        }
-        if(localStorage.m){
-            window.location  = 'order.html';
-        }
-        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-        ga('create', 'UA-89487226-1', 'auto');
-        ga('send', 'pageview');
-
-    </script>
-
     <link rel="stylesheet" href="style.css">
 
-    <script type="text/javascript" src="jquery.min.js"></script>
+
 
 </head>
 <body class="page page--index" id="top">
 <div class="header page-header--index">
     <header class="page-header page-header--index">
-        <div class="page-header__inner">
+        <div class="page-header__inner ">
             <a class="page-header__logo" href="https://www.ayyayo.com"></a>
 
             <div class="page-header__title">
-                <a href="https://www.ayyayo.com/">Ayyayo<a/>
+                <a href="https://www.ayyayo.com/">Ayyayo</a>
             </div>
 
             <div class="page-header__menu" onclick="toggle_menu()">
@@ -78,15 +61,24 @@
                     </svg>
 
             </div>
+            <h3 class="sale-head "> Sale starts 9 pm<br> <span id="timer" style="font-size: 12px; float: right;margin-top: 10px;"> </span> </h3>
+
+            <div class="page-header__language " style="    padding-top: 10px;
+    display: inline-block;
+    margin-right: 10px;">
+                <a href="https://goo.gl/forms/IEI2Q6qVaDy728Gs1"
+                   class="button button--primary button--s block__action order"
+                   style="border-color:transparent;display: inline-block;">Sell</a>
+                <a href="https://goo.gl/forms/IEI2Q6qVaDy728Gs1"
+                   class="button button--primary button--s block__action order"
+                   style="border-color:transparent;display: inline-block;">Register Now</a>
+
+            </div>
 
 
-            <div class="page-header__language">
 
-
-
-                             </div>
         </div>
-
+        <div class="clearfix"></div>
         <nav class="page-header__drawer drawer">
             <div class="drawer__inner">
                 <div class="drawer__close" onclick="toggle_menu()">
@@ -105,10 +97,6 @@
                 </div>
 
                 <ul class="menu menu--drawer">
-                    <!--<li class="menu__item">-->
-                        <!--<a href="https://play.google.com/store/apps/details?id=com.ayyayo.g" class="menu__link">-->
-                            <!--Download                                </a>-->
-                    <!--</li>-->
                     <li class="menu__item">
                         <a href="https://goo.gl/forms/oOGce8OXYZGhdfu43" class="menu__link">
                             Get in touch                                </a>
@@ -123,34 +111,41 @@
 
 <div class="section section--hero">
     <div class="block block--hero">
-        <div class="block__inner">
+        <div class="block__inner text-center">
             <div class="fb-like" data-href="https://www.facebook.com/Ayyayo-1694851644139978/" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-            <h1 class="block__title">
-                Place your order <br>In just 55 Seconds.            </h1>
-            <div class="block__body">
-                With Ayyayo, you'll get fast, simple, realtime orders for free<sup>*</sup>, available on phones all over the Bangalore.            </div>
+            <h1 class="block__title" id="title" style="    font-size: 17px;">
+                Place your order in just 55 Seconds.            </h1>
+            <div class="block__hint">
+                <sup>*</sup> Note: Serving ISI Certified 20ltr water can </div>
+
+            <form id="orderForm">
+            <div class="block__body " id="content">
+                <p style="color:#fff;display: none; font-size: 12px;" id="message"></p>
+                Quantity: <input type="number" value="1" id="quantity" class="input-quatity">
+                <br>
+                <br>
+                Delivery Contact:
+                <br><input type="text" id="deliveryContact" class="input-delivery">
+                <br>
+                <br>
+
+                <span id="location"></span>
+                <span id="address-wrap" style="display:none">Delivery Address: <br>
+                    <textarea rows="5" type="text" class="input-address" id="address"></textarea></span>
+            </div>
 
             <!--<a href="https://play.google.com/store/apps/details?id=com.ayyayo.g" class="button button&#45;&#45;primary button&#45;&#45;s block__action">Download now</a>-->
 
-            <a href="#"
-               class="button button--primary button--s block__action digits-button">Order Now</a>
 
+            <a
+               class="after-order button button--primary button--s block__action order pointer digits-button"
+                    style="border-color:transparent;display: inline-block">Order Now</a>
+</form>
             <!--<a href="https://goo.gl/forms/oOGce8OXYZGhdfu43" class="button button&#45;&#45;primary button&#45;&#45;s block__action">Join now</a>-->
 
-            <div class="block__hint">
-                <sup>*</sup> Data charges may apply. Contact your provider for details.            </div>
 
-            <div class="block__action actions">
+<!--Desktop-->
 
-                <ul>
-                    <li>
-                        <h3><a href="#" class="digits-button" >
-                            Order Now                        </a></h3>
-                    </li>
-
-                </ul>
-
-            </div>
         </div>
         <div class="block__img">
             <div class="hero-phone"></div>
@@ -252,39 +247,20 @@
         </div>
     </div>
 </footer>
-
+<script type="text/javascript" src="jquery.min.js"></script>
 <script>
-    var config = {
-        digitsConsumerKey: 'Urw1psZRoMCBQ2XAiHO9v5qbW'
-    };
-    var openx = false;
-    var speed = 200;
-    function toggle_lng_menu() {
-        if(open) {
-            $('#lng_open').slideUp(speed);
-            $('.header').removeClass('is-expanded');
-        } else {
-            $('#lng_open').slideDown(speed);
-            $('.header').addClass('is-expanded');
-        }
-        openx = !openx;
-    }
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 
-    function toggle_menu() {
-        $('.page-header__drawer').toggleClass('is-visible');
-    }
+    ga('create', 'UA-89487226-1', 'auto');
+    ga('send', 'pageview');
 
-    function toggle_search() {
-        $('.page-subheader--search').slideToggle();
-    }
-
-    $(function() {
-    })
 </script>
 <script id="digits-sdk" src="https://cdn.digits.com/1/sdk.js" async></script>
 <script src="ay.js"></script>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-<div id="fb-root"></div>
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;
