@@ -2692,6 +2692,65 @@ sup {
     background-color: #01E675;
     color: #fff !important
 }
+._17n4, ._17n5, ._17n5:after {
+    border-radius: 3px;
+}
+._17n6 {
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 4px 6px 2px 6px;
+}
+
+._17n4 {
+    background-color: #0084ff;
+}
+
+._17n6 {
+    border-radius: 3px;
+    font-size: 11px;
+    padding: 4px 6px 2px 6px;
+}
+._17n4 ._5x83 {
+    color: #fff;
+}
+
+._31ab {
+    white-space: nowrap;
+}
+
+._17n4 ._5x83 {
+    color: #fff;
+}
+
+.sp_-TUE6uimes1.sx_4fcec1 {
+    background-position: 0 -13px;
+}
+._17n9 ._h2g {
+    top: -1px;
+    vertical-align: middle;
+}
+
+._17n6 ._h2g {
+    margin-right: 3px;
+}
+i.img {
+    -ms-high-contrast-adjust: none;
+    _overflow: hidden;
+}
+.sp_-TUE6uimes1 {
+    background-image: url(img/m.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+}
+._h2g {
+    position: relative;
+    top: 1px;
+    vertical-align: bottom;
+}
+
 .pointer {
     cursor: pointer;
 }
