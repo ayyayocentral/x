@@ -1,7 +1,11 @@
-<html lang="en"   class="version-d platform-desktop">
+<!doctype html>
+<html class="no-js" ng-app="uiGenApp"  class="version-d platform-desktop" ng-controller="AppController as App">
 <head>
     <meta charset="UTF-8">
-    <title>Ayyayo - Online Water - Mineral water,Bangalore drinking water home delivery service,Packaged drinking water,20 Liter Water Can</title>
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <base href="/">
+
+    <title ng-bind="App.Page.title()">Ayyayo - Online Water - Mineral water,Bangalore drinking water home delivery service,Packaged drinking water,20 Liter Water Can</title>
     <meta name="description" content="Online Water - Mineral water,Bangalore drinking water home delivery service,Packaged drinking water,20 Liter Water Can">
     <meta property="og:title" content="Ayyayo"/>
     <meta property="og:image" content="promo.png"/>
@@ -19,8 +23,6 @@
     <meta name="twitter:description" content="Buy water online Bangalore, Yashwanthapura, Mathikere">
     <meta name="twitter:image" content="promo.png">
 
-
-
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=9">
 
@@ -35,6 +37,7 @@
     <meta name="google-site-verification" content="eRtCSfDAfnDnMdrV6ZZXt-HEHyVCuQRGHi9bR-8ALpc" />
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="app/app.css">
 
     <link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
@@ -53,318 +56,31 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="ms-icon-144x144.png">
 
+    <script>
+        var URLS = {};
 
-
+        if(location.host === 's.ayyayo.com'){
+            URLS = {
+                API : 'https://s-api.ayyayo.com/api',
+            }
+        } else if(location.host === 'localhost'){
+            URLS = {
+                API : 'http://localhost:3000/api',
+            }
+        } else {
+            URLS = {
+                API : 'https://api.ayyayo.com/api',
+            }
+        }
+    </script>
 </head>
 <body class="page page--index" id="top">
-<div class="header page-header--index">
-    <header class="page-header page-header--index">
-        <div class="page-header__inner ">
-            <a class="page-header__logo" href="https://www.ayyayo.com"></a>
-
-            <div class="page-header__title">
-                <a href="https://www.ayyayo.com/">Ayyayo</a>
-            </div>
-
-            <div class="page-header__menu" onclick="toggle_menu()">
-
-                <svg version="1.1" id="icon-menu" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="37px" height="37px" viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
-                    <path class="icon_white" d="M8,26h21v-1.8H8V26z M8,11v1.8h21V11H8z M8,19.2h21v-1.8H8V19.2z"/>
-                    </svg>
-
-            </div>
-            <h3 class="sale-head "> Register and get a chance to win 20 liter water can free<br> <span id="timer" style="font-size: 12px; float: right;margin-top: 10px;"> </span> </h3>
-
-            <div class="page-header__language " style="    padding-top: 10px;
-    display: inline-block;
-    margin-right: 10px;">
-                <a href="https://goo.gl/forms/IEI2Q6qVaDy728Gs1"
-                   class="button button--primary button--s block__action order"
-                   style="border-color:transparent;display: inline-block;">Sell</a>
-                <a href="https://goo.gl/forms/IEI2Q6qVaDy728Gs1"
-                   class="button button--primary button--s block__action order"
-                   style="border-color:transparent;display: inline-block;">Register Now</a>
-
-            </div>
-
-
-
-        </div>
-        <div class="clearfix"></div>
-        <nav class="page-header__drawer drawer">
-            <div class="drawer__inner">
-                <div class="drawer__close" onclick="toggle_menu()">
-
-                    <svg version="1.1" id="icon-close" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                             width="37px" height="37px" viewBox="0 0 37 37" style="enable-background:new 0 0 37 37;" xml:space="preserve">
-                        <polygon class="icon_white"
-                                 points="26.7,11.6 25.4,10.3 18.5,17.2 11.6,10.3 10.3,11.6 17.2,18.5 10.3,25.4 11.6,26.7 18.5,19.8
-                            25.4,26.7 26.7,25.4 19.8,18.5 "/>
-                        </svg>
-
-                </div>
-
-                <div class="drawer__icon">
-
-                </div>
-
-                <ul class="menu menu--drawer">
-                    <li class="menu__item">
-                        <a href="https://goo.gl/forms/oOGce8OXYZGhdfu43" class="menu__link">
-                            Get in touch                                </a>
-                    </li>
-                    </ul>
-            </div>
-
-        </nav>
-
-    </header>
-</div>
-
-<div class="section section--hero">
-    <div class="block block--hero">
-        <div class="block__inner text-center">
-            <div class="fb-like" data-href="https://www.facebook.com/Ayyayo-1694851644139978/" data-layout="button" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
-            <h1 class="block__title" id="title" style="    font-size: 17px;">
-                Place your order in just 55 Seconds.            </h1>
-            <h2> <div class="_3mc8" id="u_0_0"><a href="https://m.me/ayyayo1" target="_blank" id="u_0_1"><div class="_17n4 _17n6"><div class="_17n9"><div class="_5x83"><span class="_31ab"><i class="_h2g img sp_-TUE6uimes1 sx_4fcec1"></i><span><span></span>Click here to Order using Facebook Messenger</span></span></div></div></div></a></div></h2>
-            <div class="block__hint">
-                <sup>*</sup> Note: Serving ISI Certified 20ltr water can </div>
-
-            <form id="orderForm">
-            <div class="block__body " id="content">
-                <p style="color:#fff;display: none; font-size: 12px;" id="message"></p>
-                Quantity: <input type="number" value="1" id="quantity" class="input-quatity">
-                <br>
-                <br>
-                Delivery Contact:
-                <br><input type="text" id="deliveryContact" class="input-delivery">
-                <br>
-                <br>
-
-                <span id="location"></span>
-                <span id="address-wrap" style="display:none">Delivery Address: <br>
-                    <textarea rows="5" type="text" class="input-address" id="address"></textarea></span>
-            </div>
-
-            <!--<a href="https://play.google.com/store/apps/details?id=com.ayyayo.g" class="button button&#45;&#45;primary button&#45;&#45;s block__action">Download now</a>-->
-
-
-            <a
-               class="after-order button button--primary button--s block__action order pointer digits-button"
-                    style="border-color:transparent;display: inline-block">Order Now</a>
-</form>
-            <!--<a href="https://goo.gl/forms/oOGce8OXYZGhdfu43" class="button button&#45;&#45;primary button&#45;&#45;s block__action">Join now</a>-->
-
-
-<!--Desktop-->
-
-        </div>
-        <div class="block__img">
-            <div class="hero-phone"></div>
-        </div>
-    </div>
-
-</div>
-<div>
-
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Belathur, Bangalore Rural, Karnataka PINCODE - 560067 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Gottigere, Bangalore, Karnataka PINCODE - 560083 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Science Institute, Bangalore, Karnataka PINCODE - 560012 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Vasanthnagar, Bangalore, Karnataka PINCODE - 560052 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Cubban Road, Bangalore, Karnataka PINCODE - 560002 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Jayangar III Block, Bangalore, Karnataka PINCODE - 560011 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Chikkabanavara, Bangalore, Karnataka PINCODE - 560090 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Dasarahalli, Bangalore, Karnataka PINCODE - 560057 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Herohalli, Bangalore, Karnataka PINCODE - 560091 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Yelahanka New Town, Bangalore, Karnataka PINCODE - 560106 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, C.V.Raman Nagar, Bangalore, Karnataka PINCODE - 560093 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Jalahalli East, Bangalore, Karnataka PINCODE - 560014 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, MSR Road, Bangalore, Karnataka PINCODE - 560054 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Chamrajpet Bazar, Bangalore, Karnataka PINCODE - 560018 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Bagalgunte, Bangalore, Karnataka PINCODE - 560073 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Sri Mahaganapathi Nagar, Bangalore, Karnataka PINCODE - 560044 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Basaveswaranagar II Stage, Bangalore, Karnataka PINCODE - 560086 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Jalahalli West, Bangalore, Karnataka PINCODE - 560015 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Peenya Small Industries, Bangalore, Karnataka PINCODE - 560058 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, HMT Staff Quarters, Bangalore, Karnataka PINCODE - 560031 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Mavalli, Bangalore, Karnataka PINCODE - 560004 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Jayanagar, Bangalore, Karnataka PINCODE - 560041 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Jayangar East, Bangalore, Karnataka PINCODE - 560069 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Veerasandra, Bangalore, Karnataka PINCODE - 561229 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Sivan Chetty Gardens, Bangalore, Karnataka PINCODE - 560042 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Bangalore Sub Fgn Post, Bangalore, Karnataka PINCODE - 560025 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Vyalikaval Extn, Bangalore, Karnataka PINCODE - 560003 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Maruthi Sevanagar, Bangalore, Karnataka PINCODE - 560033 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Benson Town, Bangalore, Karnataka PINCODE - 560006 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Training Command IAF, Bangalore, Karnataka PINCODE - 560094 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Aranya Bhavan, Bangalore, Karnataka PINCODE - 560080 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, New Thippasandra, Bangalore, Karnataka PINCODE - 560075 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Jeevanahalli, Bangalore, Karnataka PINCODE - 560005 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Indiranagar Com. Complex, Bangalore, Karnataka PINCODE - 560038 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Domlur, Bangalore, Karnataka PINCODE - 560071 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Bangalore Air Port, Bangalore, Karnataka PINCODE - 560017 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Dharmaram College, Bangalore, Karnataka PINCODE - 560029 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Kothnur, Bangalore, Karnataka PINCODE - 560076 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Shanthinagar, Bangalore, Karnataka PINCODE - 560027 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Hosur Road, Bangalore, Karnataka PINCODE - 560030 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Austin Town, Bangalore, Karnataka PINCODE - 560047 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Narayan Pillai Street, Bangalore, Karnataka PINCODE - 560051 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, KP West, Bangalore, Karnataka PINCODE - 560020 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Ramachandrapuram, Bangalore, Karnataka PINCODE - 560021 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Gayathrinagar, Bangalore, Karnataka PINCODE - 560055 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Chikkabettahalli, Bangalore, Karnataka PINCODE - 560097 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Govindapalya, Bangalore, Karnataka PINCODE - 560013 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Krishnarajapuram RS, Bangalore, Karnataka PINCODE - 560016 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Kalyanagar, Bangalore, Karnataka PINCODE - 560043 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Bhattarahalli, Bangalore, Karnataka PINCODE - 560049 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Gaviopuram Extension, Bangalore, Karnataka PINCODE - 560019 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Kanteeravanagar, Bangalore, Karnataka PINCODE - 560096 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Goraguntepalya, Bangalore, Karnataka PINCODE - 560022 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, KG Road, Bangalore, Karnataka PINCODE - 560009 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Anandnagar, Bangalore, Karnataka PINCODE - 560024 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, P&T Col Kavalbyrasandra, Bangalore, Karnataka PINCODE - 560032 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Devarjeevanahalli, Bangalore, Karnataka PINCODE - 560045 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Thanisandra, Bangalore, Karnataka PINCODE - 560077 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Amruthahalli, Bangalore, Karnataka PINCODE - 560092 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, GKVK, Bangalore, Karnataka PINCODE - 560065 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Uttarahalli, Bangalore, Karnataka PINCODE - 560061 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Ashoknagar, Bangalore, Karnataka PINCODE - 560050 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Tyagrajnagar, Bangalore, Karnataka PINCODE - 560028 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Jayanagar West, Bangalore, Karnataka PINCODE - 560070 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Girinagar, Bangalore, Karnataka PINCODE - 560085 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Adugodi, Bangalore, Karnataka PINCODE - 560095 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Madivala, Bangalore, Karnataka PINCODE - 560102 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Bommanahalli, Bangalore, Karnataka PINCODE - 560068 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Kothanur, Bangalore, Karnataka PINCODE - 560062 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Agara, Bangalore, Karnataka PINCODE - 560034 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Whitefield, Bangalore, Karnataka PINCODE - 560066 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Varthur, Bangalore, Karnataka PINCODE - 560087 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Panathur, Bangalore, Karnataka PINCODE - 560103 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Doddakannalli, Bangalore, Karnataka PINCODE - 560035 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Mahadevapura, Bangalore, Karnataka PINCODE - 560048 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Bagalur, Bangalore, Karnataka PINCODE - 562149 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Hampinagar, Bangalore, Karnataka PINCODE - 560104 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Bapujinagar, Bangalore, Karnataka PINCODE - 560026 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Magadi Road, Bangalore, Karnataka PINCODE - 560023 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Rv Niketan, Bangalore, Karnataka PINCODE - 560059 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Kenchanahalli, Bangalore, Karnataka PINCODE - 560098 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Kengeri, Bangalore, Karnataka PINCODE - 560060 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Basaveshwaranagar, Bangalore, Karnataka PINCODE - 560079 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Konappana Agrahara, Bangalore, Karnataka PINCODE - 560100 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Bnagalore Viswavidalaya, Bangalore, Karnataka PINCODE - 560056 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Nagarbhavi Stage 4, Bangalore, Karnataka PINCODE - 560242 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Chandra Lay Out, Bangalore, Karnataka PINCODE - 560040 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Doddanekkundi, Bangalore, Karnataka PINCODE - 560037 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Nagarbhavi, Bangalore, Karnataka PINCODE - 560072 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Agram, Bangalore, Karnataka PINCODE - 560007 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Someswarapura, Bangalore, Karnataka PINCODE - 560008 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, J P Nagar, Bangalore, Karnataka PINCODE - 560078 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, JC Nagar, Bangalore, Karnataka PINCODE - 560046 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Nayandahalli, Bangalore, Karnataka PINCODE - 560039 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Avani Sringeri Mutt, Bangalore, Karnataka PINCODE - 560010 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Balepete, Bangalore, Karnataka PINCODE - 560053 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Seshadripuram, Bangalore, Karnataka PINCODE - 560001 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Jakkur, Bangalore, Karnataka PINCODE - 560064 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Lingarajapuram, Bangalore, Karnataka PINCODE - 560084 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-    <p><a href="https://www.ayyayo.com">Buy Water Can Online, Krishnarajapura, Bangalore, Karnataka PINCODE - 560036 - January 13th 2017 - 20 Ltr Online Water Can - Bisleri, Bailley, Mineral water, Bangalore drinking water home delivery service, Packaged drinking water, 20 Liter Water Can</a></p>
-
-
-</div>
-
-
-<div class="section section--more" style="display: none">
-    <a class="button button--outline" href="https://www.ayyayo.com/features/">Explore features</a>
-</div>
-
-<footer class="page-footer -primary">
-    <div class="page-footer__inner">
-
-        <div class="four -spaced">
-            <div class="block block--footer four__item">
-                <h4 class="block__title">Ayyayo</h4>
-                <div class="block__body">
-                    <ul class="list list--footer">
-                        <li class="list__item">
-                            <a href="https://play.google.com/store/apps/details?id=com.ayyayo.g" class="list__link">
-                                Download                                        </a>
-                        </li>
-                        <li class="list__item">
-                            <a href="https://goo.gl/forms/oOGce8OXYZGhdfu43" class="list__link">
-                                Get in touch                                       </a>
-                        </li>
-                        <li class="list__item">
-                            <span class="list__empty"></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="block block--footer four__item">
-                <h4 class="block__title">Company</h4>
-                <div class="block__body">
-                    <ul class="list list--footer">
-
-                        <li class="list__item">
-                            <a href="https://blog.ayyayo.com" class="list__link">
-                                Blog                                        </a>
-                        </li>
-                        <li class="list__item">
-                            <span class="list__empty"></span>
-                        </li>
-                        <li class="list__item">
-                            <span class="list__empty"></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="block block--footer four__item">
-                <h4 class="block__title">Download</h4>
-                <div class="block__body">
-                    <ul class="list list--footer">
-                        <li class="list__item">
-                            <a href="https://play.google.com/store/apps/details?id=com.ayyayo.g" class="list__link">
-                                Android                                        </a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="block block--footer four__item">
-                <h4 class="block__title">Help</h4>
-                <div class="block__body">
-                    <ul class="list list--footer">
-
-                        <li class="list__item">
-                            <a href="https://twitter.com/ayyayo_" class="list__link">
-                                Twitter                                        </a>
-                        </li>
-
-                        <li class="list__item">
-                            <span class="list__empty"></span>
-                        </li>
-                        <li class="list__item">
-                            <span class="list__empty"></span>
-                        </li>
-                        <li class="list__item">
-                            <span class="list__empty"></span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
-<footer class="page-footer -secondary">
-    <div class="page-footer__inner">
-        <div class="four">
-            <div class="four__item" dir="auto">
-                2016 &copy; Ayyayo.
-            </div>
-            <div class="four__item -span3">
-                <a href="privacy-policy/" class="page-footer__link">Privacy & Terms</a>
-            </div>
-        </div>
-    </div>
-</footer>
+<!--[if lt IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+<![endif]-->
+<navbar></navbar>
+<div ui-view=""></div>
+<foot></foot>
 <script src='https://www.gstatic.com/firebasejs/3.6.4/firebase.js'></script>
 <script type="text/javascript" src="jquery.min.js"></script>
 <script>
@@ -381,10 +97,12 @@
 <script src="ay.js"></script>
 <script src='notifications.js'></script>
 
+<script src="lib/angular.min.js"></script>
+<script src="app/app.js"></script>
+<script src="app/controllers.js"></script>
+
+
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-
 <script>(function(d, s, id) {
     var js, fjs = d.getElementsByTagName(s)[0];
     if (d.getElementById(id)) return;

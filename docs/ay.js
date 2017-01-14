@@ -4,21 +4,6 @@
  * @romainhuet
  */
 
-var URLS = {};
-
-if(location.host === 's.ayyayo.com'){
-    URLS = {
-        API : 'https://s-api.ayyayo.com/api',
-    }
-} else if(location.host === 'localhost'){
-    URLS = {
-        API : 'http://localhost:3000/api',
-    }
-} else {
-    URLS = {
-        API : 'https://api.ayyayo.com/api',
-    }
-}
 
 (function() {
     /**
